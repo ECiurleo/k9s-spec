@@ -4,8 +4,8 @@ Release:        2%{?dist}
 Summary:        Kubernetes CLI To Manage Your Clusters In Style!
 License:        Apache-2.0
 URL:            https://k9scli.io/
-Source0:        https://github.com/derailed/k9s/archive/v%{version}.tar.gz
-#Source0:        https://github.com/derailed/k9s/archive/master.tar.gz
+Source0:        https://github.com/derailed/k9s/archive/refs/tags/v%{version}.tar.gz
+#Source0:       https://github.com/derailed/k9s/archive/refs/tags/v0.27.4.tar.gz
 BuildRequires:  make, git, go, wget, bsdtar, binutils, libX11-devel, jq
 
 %if 0%{?suse_version:1}
