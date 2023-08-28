@@ -59,7 +59,7 @@ tar xzf $PATCH_GO_VERSION.linux-${ARCH}.tar.gz
 %build
 export PATH=$PWD/go/bin:$PATH
 go version
-make build
+make %{?_smp_mflags} build
 
 %install
 install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%{_bindir}/%{name}"
