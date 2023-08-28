@@ -71,3 +71,5 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 
 
 %changelog
+* %{strftime('%a %b %d %Y')} Emanuele CIurleo <emanuele@ciurleo.com> - %{version}
+- Initial version
