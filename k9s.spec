@@ -71,5 +71,5 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 
 
 %changelog
-* %{strftime('%a %b %d %Y')} Emanuele CIurleo <emanuele@ciurleo.com> - %{version}
-- Initial version
+* Sat Aug 28 2023 Emanuele Ciurleo <emanuele@ciurleo.com> - %{version}
+- Build of version %{version} - changes here https://github.com/derailed/k9s/releases 
