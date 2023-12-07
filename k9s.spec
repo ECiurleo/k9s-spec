@@ -23,7 +23,7 @@ K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of
 
 # make sure we're using the developer required version
 # useful when building in system that have an older go version
-REQUIRED_GO_VERSION=$(grep -oP '^go \K(0|[1-9]\d*\.(0|[1-9]\d*))$' go.mod)
+REQUIRED_GO_VERSION=$(grep -oP '^go \K\d+(\.\d+){1,2}' go.mod)
 echo "Target go version: $REQUIRED_GO_VERSION - %{_arch}"
 
 
