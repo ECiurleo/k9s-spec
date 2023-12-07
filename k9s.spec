@@ -27,7 +27,7 @@ echo "Target go version: $REQUIRED_GO_VERSION - %{_arch}"
 
 # Fetch the latest patch version for the required Go version
 PATCH_GO_VERSION=$(curl "https://go.dev/dl/?mode=json" | \
-    jq -r "[.[] | select(.version | startswith(\"go${REQUIRED_GO_VERSION}\")) | .version] | max_by(split(\".\") | map(tonumber))")
+    jq -r "[.[] | select(.version | startswith(\"go$REQUIRED_GO_VERSION.\")) | .version] | max_by(split(\".\")[1:2] | map(tonumber) | add)")
 echo "Using Go version $PATCH_GO_VERSION"
 
 # Proceed only if PATCH_GO_VERSION is not empty
