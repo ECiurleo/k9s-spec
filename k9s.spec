@@ -21,14 +21,20 @@ K9s provides a terminal UI to interact with your Kubernetes clusters. The aim of
 %prep
 %autosetup -n %{name}-%{version}
 
-# make sure we're using the developer required version
-# useful when building in system that have an older go version
-REQUIRED_GO_VERSION=$(grep -oP '^go \K\d+(\.\d+){1,2}' go.mod)
+# Extract required Go version (major.minor)
+REQUIRED_GO_VERSION=$(grep -oP '^go \K\d+\.\d+' go.mod)
 echo "Target go version: $REQUIRED_GO_VERSION - %{_arch}"
 
+# Fetch the latest patch version for the required Go version
+PATCH_GO_VERSION=$(curl "https://go.dev/dl/?mode=json" | \
+    jq -r "[.[] | select(.version | startswith(\"go${REQUIRED_GO_VERSION}\")) | .version] | max_by(split(\".\") | map(tonumber))")
+echo "Using Go version $PATCH_GO_VERSION"
 
-PATCH_GO_VERSION=$(curl "https://go.dev/dl/?mode=json" | jq -r ".[] | select(.version | startswith(\"go${REQUIRED_GO_VERSION}\")) | .version")
-echo "Ensuring minimal go version $PATCH_GO_VERSION"
+# Proceed only if PATCH_GO_VERSION is not empty
+if [ -z "$PATCH_GO_VERSION" ]; then
+    echo "Error: No matching Go version found for $REQUIRED_GO_VERSION"
+    exit 1
+fi
 
 # %{ix86}
 %ifarch i386 i486 i586 i686 pentium3 pentium4 athlon geode
