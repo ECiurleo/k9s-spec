@@ -1,6 +1,9 @@
 # k9s-spec
 
-## To build a new version of k9s using Copr
+## Copr will rebuild automatically using a webhook
+https://docs.pagure.org/copr.copr/user_documentation.html#github 
+
+## To build a new version of k9s using Copr Manually
 
 1. Update k9s.spec to reflect the [verison required](https://github.com/derailed/k9s/releases)
 
