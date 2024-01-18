@@ -1,3 +1,12 @@
+# K9s packages RPM packages for; 
+
+ * Amazonlinux 2023	x86_64
+ * Centos-stream 9	x86_64
+ * Fedora 38	x86_64
+ * Fedora 39	x86_64
+ * Fedora rawhide	x86_64
+ * Rhel 9 x86_64
+
 # k9s-spec
 
 ## Copr will rebuild automatically using a webhook
