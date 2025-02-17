@@ -1,12 +1,18 @@
 # K9s packages RPM packages for; 
 
-* amazonlinux-2023-x86_64
-* centos-stream-9-x86_64
-* fedora-40-x86_64
-* fedora-41-x86_64
-* fedora-42-x86_64
-* fedora-rawhide-x86_64
-* rhel-9-x86_64
+* Amazonlinux 2023	x86_64
+* Centos-stream 10	x86_64
+* Centos-stream 9	x86_64
+* EPEL 10	x86_64
+* EPEL 8	x86_64
+* EPEL 9	x86_64
+* Fedora 40	x86_64
+* Fedora 41	x86_64
+* Fedora 42	x86_64
+* Fedora rawhide	x86_64
+* openSUSE Leap 15.5	x86_64
+* openSUSE Tumbleweed	x86_64
+* Rhel 9
 
 # k9s-spec
 
