@@ -1,5 +1,5 @@
 Name:           k9s
-Version:        0.40.7
+Version:        0.40.8
 Release:        1%{?dist}
 Summary:        Kubernetes CLI To Manage Your Clusters In Style!
 License:        Apache-2.0
