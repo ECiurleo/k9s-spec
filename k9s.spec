@@ -76,6 +76,8 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 
 
 %changelog
+* Wed Mar 12 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.40.8
+- Build of version 0.40.8 - changes here https://github.com/derailed/k9s/releases/tag/v0.40.8
 * Tue Mar 11 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.40.7
 - Build of version 0.40.7 - changes here https://github.com/derailed/k9s/releases/tag/v0.40.7
 * Tue Feb 18 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.40.5
