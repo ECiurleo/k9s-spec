@@ -78,9 +78,9 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 %changelog
 * Mon Oct 06 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.14
 - Build of version 0.50.14 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.14
-* Thur Sept 19 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.12
+* Thu Sep 19 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.12
 - Build of version 0.50.12 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.12
-* Wed Sept 18 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.11
+* Wed Sep 18 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.11
 - Build of version 0.50.11 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.11
 * Wed Jul 16 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.9
 - Build of version 0.50.9 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.9
@@ -90,7 +90,7 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 - Build of version 0.50.6 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.6
 * Sat Apr 19 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.4
 - Build of version 0.50.4 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.4
-* Thur Apr 10 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.2
+* Thu Apr 10 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.2
 - Build of version 0.50.2 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.2
 * Wed Apr 09 2025 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.50.0
 - Build of version 0.50.0 - changes here https://github.com/derailed/k9s/releases/tag/v0.50.0
@@ -120,15 +120,15 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 - Build of version 0.32.1 - changes here https://github.com/derailed/k9s/releases/tag/v0.32.1
 * Sat Mar 02 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.32.0
 - Build of version 0.32.0 - changes here https://github.com/derailed/k9s/releases/tag/v0.32.0
-* Thur Feb 15 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.9
+* Thu Feb 15 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.9
 - Build of version 0.31.9 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.9
 * Wed Feb 07 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.8
 - Build of version 0.31.8 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.8
-* Thur Jan 25 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.7
+* Thu Jan 25 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.7
 - Build of version 0.31.7 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.7
-* Thur Jan 18 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.6
+* Thu Jan 18 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.6
 - Build of version 0.31.6 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.6
-* Thur Jan 11 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.4
+* Thu Jan 11 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.4
 - Build of version 0.31.4 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.4
 * Tue Jan 09 2024 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.31.1
 - Build of version 0.31.1 - changes here https://github.com/derailed/k9s/releases/tag/v0.31.1
