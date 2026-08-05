@@ -13,6 +13,20 @@
 
 # k9s-spec
 
+## Automatic weekly version updates
+
+This repo includes a GitHub Actions workflow that runs weekly and checks the latest release from https://github.com/derailed/k9s/releases.
+
+If a new release is found, it will:
+
+1. Update `Version` in `k9s.spec`
+2. Add a new `%changelog` entry
+3. Commit and push to the default branch
+
+Because Copr is already watching this repository, that push triggers a new build automatically.
+
+You can also run it manually from the Actions tab using `workflow_dispatch`.
+
 ## Copr will rebuild automatically using a webhook
 https://docs.pagure.org/copr.copr/user_documentation.html#github 
 

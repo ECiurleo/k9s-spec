@@ -1,0 +1,81 @@
+name: Auto update k9s spec
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-spec:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check latest upstream release and update spec
+        id: update
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Read current package version from the spec file.
+          current_version=$(awk '/^Version:/ { print $2; exit }' k9s.spec)
+
+          # Resolve latest upstream release tag (for example: v0.51.0).
+          latest_tag=$(curl -fsSL https://api.github.com/repos/derailed/k9s/releases/latest | jq -r '.tag_name')
+          latest_version=${latest_tag#v}
+
+          echo "Current spec version: ${current_version}"
+          echo "Latest upstream tag: ${latest_tag}"
+
+          if [[ -z "${latest_version}" || "${latest_version}" == "null" ]]; then
+            echo "Failed to resolve latest upstream version"
+            exit 1
+          fi
+
+          if [[ "${current_version}" == "${latest_version}" ]]; then
+            echo "No update required"
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Update the Version field to the latest upstream version.
+          sed -i -E "s/^Version:[[:space:]]+.*/Version:        ${latest_version}/" k9s.spec
+
+          # Prepend a new changelog entry immediately after %changelog.
+          changelog_date=$(LC_ALL=C date -u '+%a %b %d %Y')
+          changelog_entry="* ${changelog_date} GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com> - ${latest_version}\\n- Automated update to version ${latest_version} - changes here https://github.com/derailed/k9s/releases/tag/v${latest_version}\\n"
+
+          awk -v entry="$changelog_entry" '
+            /^%changelog$/ {
+              print
+              print entry
+              next
+            }
+            { print }
+          ' k9s.spec > k9s.spec.tmp
+          mv k9s.spec.tmp k9s.spec
+
+          echo "updated=true" >> "$GITHUB_OUTPUT"
+          echo "new_version=${latest_version}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push changes
+        if: steps.update.outputs.updated == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Use the standard Actions bot identity for automated commits.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Push updated spec back to the branch that triggered this workflow.
+          git add k9s.spec
+          git commit -m "chore: bump k9s to v${{ steps.update.outputs.new_version }}"
+          git push
