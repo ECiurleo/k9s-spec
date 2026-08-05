@@ -1,5 +1,5 @@
 Name:           k9s
-Version:        0.50.18
+Version:        0.51.0
 Release:        1%{?dist}
 Summary:        Kubernetes CLI To Manage Your Clusters In Style!
 License:        Apache-2.0
@@ -76,6 +76,9 @@ install -D -m 0755 %{_builddir}/%{name}-%{version}/execs/%{name} "%{buildroot}/%
 
 
 %changelog
+* Wed Aug 05 2026 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.51.0
+- Build of version 0.51.0 - changes here https://github.com/derailed/k9s/releases/tag/v0.51.0
+
 * Wed Aug 05 2026 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.51.0
 - Build of version 0.51.0 - changes here https://github.com/derailed/k9s/releases/tag/v0.51.0
 * Sat Jun 06 2026 Emanuele Ciurleo <emanuele@ciurleo.com> - 0.51.0
