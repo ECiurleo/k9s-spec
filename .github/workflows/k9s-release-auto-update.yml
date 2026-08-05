@@ -50,7 +50,7 @@ jobs:
 
           # Prepend a new changelog entry immediately after %changelog.
           changelog_date=$(LC_ALL=C date -u '+%a %b %d %Y')
-          changelog_entry="* ${changelog_date} GitHub Actions <41898282+github-actions[bot]@users.noreply.github.com> - ${latest_version}\\n- Automated update to version ${latest_version} - changes here https://github.com/derailed/k9s/releases/tag/v${latest_version}\\n"
+          changelog_entry="* ${changelog_date} Emanuele Ciurleo <emanuele@ciurleo.com> - ${latest_version}\\n- Build of version ${latest_version} - changes here https://github.com/derailed/k9s/releases/tag/v${latest_version}\\n"
 
           awk -v entry="$changelog_entry" '
             /^%changelog$/ {
