@@ -5,8 +5,8 @@
 * Centos-stream 9	x86_64
 * EPEL 10	x86_64
 * EPEL 9	x86_64
-* Fedora 41	x86_64
-* Fedora 42	x86_64
+* Fedora 43	x86_64
+* Fedora 44	x86_64
 * Fedora rawhide	x86_64
 * Rhel 9
 * Rhel 10
